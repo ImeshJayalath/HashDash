@@ -2,16 +2,16 @@ package com.example.mealapp_2
 
 import android.content.Intent
 import android.os.Bundle
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
-import com.example.mealapp_2.R
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+
 
 class MainActivity : AppCompatActivity(){
-    private lateinit var addDB: Button
+
     private lateinit var saveDbButton: Button
     private lateinit var searchMealIngreButton: Button
     private lateinit var searchMealButton: Button
@@ -27,32 +27,25 @@ class MainActivity : AppCompatActivity(){
         searchMealButton = findViewById(R.id.button3)
         searchMealWebButton = findViewById(R.id.searchWeb)
 
-
         saveDbButton.setOnClickListener{
             saveMealsToDb()
         }
-
         searchMealIngreButton.setOnClickListener{
             displaySearchIngrePage()
         }
-
         searchMealButton.setOnClickListener {
             displaySearchMealPage()
         }
-
         searchMealWebButton.setOnClickListener {
             displaySearchMealWebPage()
         }
 
-
-        // Loading the stored states of the view widgets
         if (savedInstanceState != null) {
             val button1 = savedInstanceState.getBoolean("Btn1IsEnabled")
             val button2 = savedInstanceState.getBoolean("Btn2IsEnabled")
             val button3 = savedInstanceState.getBoolean("Btn3IsEnabled")
             val button4 = savedInstanceState.getBoolean("Btn3IsEnabled")
 
-            //Assigning values
             saveDbButton.isEnabled = button1
             searchMealIngreButton.isEnabled = button2
             searchMealButton.isEnabled = button3
@@ -85,7 +78,8 @@ class MainActivity : AppCompatActivity(){
     }
 
     private fun saveMealsToDb() {
-        val db = Room.databaseBuilder(this, Database::class.java, "MovieDB").build()
+        // Creating an instance of the database
+        val db = Room.databaseBuilder(this, Database::class.java, "MealDB").build()
         val mealDao = db.mealDao()
 
         val text = "Meals Added to Database"
@@ -101,13 +95,13 @@ class MainActivity : AppCompatActivity(){
                     "Pork",
                     "Chinese",
                     "Preparation\r\n1. " +
-                            "Crack the egg into a bowl. Separate the egg white and yolk.\r\n\r\n" +
-                            "Sweet and Sour Pork\r\n2. Slice the pork tenderloin into ips.\r\n\r\n" +
+                            "Crack the egg into a bowl. Separate the egg white and yolk." +
+                            "Sweet and Sour Pork\r\n2. Slice the pork tenderloin into ips." +
                             "3. Prepare the marinade using a pinch of salt, one teaspoon of starch, " +
-                            "two teaspoons of light soy sauce, and an egg white.\r\n\r\n" +
+                            "two teaspoons of light soy sauce, and an egg white." +
                             "4. Marinade the pork ips for about 20 minutes.\r\n\r\n" +
                             "5. Put the remaining starch in a bowl. Add some water and vinegar to " +
-                            "make a starchy sauce.\r\n\r\n" +
+                            "make a starchy sauce." +
                             "Sweet and Sour Pork\r\nCooking Inuctions\r\n" +
                             "1. Pour the cooking oil into a wok and heat to 190\u00b0C (375\u00b0F). " +
                             "Add the marinated pork ips and fry them until they turn brown. Remove " +
@@ -174,9 +168,9 @@ class MainActivity : AppCompatActivity(){
                     "French",
                     "Heat the oil in a large flameproof casserole dish and stir-fry the" +
                             " mushrooms until they start to soften. Add the chicken legs and cook" +
-                            " briefly on each side to colour them a little.\r\nPour in the passata, " +
-                            "crumble in the stock cube and stir in the olives. Season with black pepper \u2013 " +
-                            "you shouldn\u2019t need salt. Cover and simmer for 40 mins until the chicken " +
+                            " briefly on each side to colour them a little.Pour in the passata, " +
+                            "crumble in the stock cube and stir in the olives. Season with black pepper " +
+                            "you shouldn't need salt. Cover and simmer for 40 mins until the chicken " +
                             "is tender. Sprinkle with parsley and serve with pasta and a salad, or mash " +
                             "and green veg, if you like.",
 
@@ -235,24 +229,24 @@ class MainActivity : AppCompatActivity(){
                     null,
                     "Beef",
                     "Vietnamese",
-                    "Add'l ingredients: mayonnaise, siracha\r\n\r\n1\r\n\r\nPlace rice in a " +
+                    "Add'l ingredients: mayonnaise, siracha\r\n\r\n1. Place rice in a " +
                             "fine-mesh sieve and rinse until water runs clear. Add to a small pot with 1 " +
                             "cup water (2 cups for 4 servings) and a pinch of salt. Bring to a boil, " +
                             "then cover and reduce heat to low. Cook until rice is tender, 15 minutes. " +
                             "Keep covered off heat for at least 10 minutes or until ready to serve." +
-                            "\r\n\r\n2\r\n\r\nMeanwhile, wash and dry all produce. Peel and finely chop " +
+                            "\r\n\r\n2. Meanwhile, wash and dry all produce. Peel and finely chop " +
                             "garlic. Zest and quarter lime (for 4 servings, zest 1 lime and quarter both). " +
                             "Trim and halve cucumber lengthwise; thinly slice crosswise into half-moons. " +
                             "Halve, peel, and medium dice onion. Trim, peel, and grate carrot." +
-                            "\r\n\r\n3\r\n\r\nIn a medium bowl, combine cucumber, juice from half the lime," +
+                            "\r\n\r\n3. In a medium bowl, combine cucumber, juice from half the lime," +
                             " \u00bc tsp sugar (\u00bd tsp for 4 servings), and a pinch of salt. In a small bowl, " +
                             "combine mayonnaise, a pinch of garlic, a squeeze of lime juice, and as much " +
                             "sriracha as you\u2019d like. Season with salt and pepper." +
-                            "\r\n\r\n4\r\n\r\nHeat a drizzle of oil in a large pan over medium-high heat." +
+                            "\r\n\r\n4. Heat a drizzle of oil in a large pan over medium-high heat." +
                             " Add onion and cook, stirring, until softened, 4-5 minutes. Add beef, remaining garlic, " +
                             "and 2 tsp sugar (4 tsp for 4 servings). Cook, breaking up meat into pieces, " +
                             "until beef is browned and cooked through, 4-5 minutes. Stir in soy sauce. " +
-                            "Turn off heat; taste and season with salt and pepper.\r\n\r\n5\r\n\r\n" +
+                            "Turn off heat; taste and season with salt and pepper.\r\n\r\n5. " +
                             "Fluff rice with a fork; stir in lime zest and 1 TBSP butter. Divide rice between bowls. " +
                             "Arrange beef, grated carrot, and pickled cucumber on top. Top with a squeeze of lime juice." +
                             " Drizzle with sriracha mayo.",
@@ -363,6 +357,8 @@ class MainActivity : AppCompatActivity(){
 
                     )
 
+
+
                 // Populating Database
                 mealDao.insertMeals(meal1)
                 mealDao.insertMeals(meal2)
@@ -370,11 +366,12 @@ class MainActivity : AppCompatActivity(){
                 mealDao.insertMeals(meal4)
                 toast.show()
 
-                // Displaying DB table data
+                // Displaying DB table data with activity
                 dbTablePage()
             }
         }
     }
+
     private fun dbTablePage() {
         val intent = Intent(this, DisplayDB::class.java)
         startActivity(intent)
