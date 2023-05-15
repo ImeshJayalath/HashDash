@@ -1,5 +1,6 @@
 package com.example.mealapp_2
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
@@ -304,20 +305,38 @@ class MainActivity : AppCompatActivity(){
 
 
                 // Populating Database
-                mealDao.insertMeals(meal1, meal2, meal3, meal4)
+                mealDao.insertMeals(meal1)
+                mealDao.insertMeals(meal2)
+                mealDao.insertMeals(meal3)
+                mealDao.insertMeals(meal4)
                 toast.show()
 
                 // Displaying DB table data
-                //dbTablePage()
+                dbTablePage()
             }
         }
     }
-//    private fun dbTablePage() {
-//        // Creating an instance of the database
-//        val intent = Intent(this, DisplayDBActivity::class.java)
-//        startActivity(intent)
-//
-//
-//    }
+    private fun dbTablePage() {
+        // Creating an instance of the database
+        val intent = Intent(this, DisplayDBActivity::class.java)
+        startActivity(intent)
 
+
+    }
+
+    fun displaySearchIngrePage() {
+        val intent = Intent(this, SearchIngredient::class.java)
+        startActivity(intent)
+    }
+
+    // Displaying Movie Search Page
+    fun displaySearchMealPage() {
+        val intent = Intent(this, SearchMeal::class.java)
+        startActivity(intent)
+    }
+
+    fun displaySearchMealWebPage() {
+        val intent = Intent(this, SearchWeb::class.java)
+        startActivity(intent)
+    }
 }
