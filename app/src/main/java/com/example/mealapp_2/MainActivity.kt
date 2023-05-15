@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity(){
     }
     private fun saveMealsToDb() {
         // Creating an instance of the database
-        val db = Room.databaseBuilder(this, MealDataBase::class.java, "MovieDB").build()
+        val db = Room.databaseBuilder(this, Database::class.java, "MovieDB").build()
         val mealDao = db.mealDao()
 
         val text = "Meals Added to Database"
@@ -318,7 +318,7 @@ class MainActivity : AppCompatActivity(){
     }
     private fun dbTablePage() {
         // Creating an instance of the database
-        val intent = Intent(this, DisplayDBActivity::class.java)
+        val intent = Intent(this, DisplayDB::class.java)
         startActivity(intent)
 
 

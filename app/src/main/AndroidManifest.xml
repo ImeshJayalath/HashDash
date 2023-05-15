@@ -12,7 +12,20 @@
         android:theme="@style/Theme.MealApp_2"
         tools:targetApi="31">
         <activity
+            android:name=".SearchWeb"
+            android:exported="false" />
+        <activity
+            android:name=".SearchMeal"
+            android:exported="false" />
+        <activity
+            android:name=".SearchIngredient"
+            android:exported="false" />
+        <activity
+            android:name=".DisplayDB"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
+
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,5 +34,6 @@
             </intent-filter>
         </activity>
     </application>
+
 
 </manifest>
