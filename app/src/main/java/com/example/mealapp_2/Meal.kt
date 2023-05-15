@@ -42,10 +42,10 @@ data class Meal(
     @ColumnInfo(name = "ingredient4")
     val ingredient4: String?,
 
-    @ColumnInfo(name = "meal_ingredient5")
+    @ColumnInfo(name = "ingredient5")
     val ingredient5: String?,
 
-    @ColumnInfo(name = "meal_ingredient6")
+    @ColumnInfo(name = "ingredient6")
     val ingredient6: String?,
 
     @ColumnInfo(name = "ingredient7")

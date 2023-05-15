@@ -12,7 +12,6 @@
         android:id="@+id/button3"
         android:layout_width="83dp"
         android:layout_height="111dp"
-
         android:text="Search     for            Meals"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

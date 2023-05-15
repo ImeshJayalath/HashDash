@@ -12,18 +12,79 @@ import kotlinx.coroutines.runBlocking
 
 class MainActivity : AppCompatActivity(){
     private lateinit var addDB: Button
+    private lateinit var saveDbButton: Button
+    private lateinit var searchMealIngreButton: Button
+    private lateinit var searchMealButton: Button
+    private lateinit var searchMealWebButton: Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        addDB = findViewById(R.id.button)
-        addDB.setOnClickListener{
+        saveDbButton = findViewById(R.id.button)
+        searchMealIngreButton = findViewById(R.id.button2)
+        searchMealButton = findViewById(R.id.button3)
+        searchMealWebButton = findViewById(R.id.searchWeb)
+
+
+        saveDbButton.setOnClickListener{
             saveMealsToDb()
         }
+
+        searchMealIngreButton.setOnClickListener{
+            displaySearchIngrePage()
+        }
+
+        searchMealButton.setOnClickListener {
+            displaySearchMealPage()
+        }
+
+        searchMealWebButton.setOnClickListener {
+            displaySearchMealWebPage()
+        }
+
+
+        // Loading the stored states of the view widgets
+        if (savedInstanceState != null) {
+            val button1 = savedInstanceState.getBoolean("Btn1IsEnabled")
+            val button2 = savedInstanceState.getBoolean("Btn2IsEnabled")
+            val button3 = savedInstanceState.getBoolean("Btn3IsEnabled")
+            val button4 = savedInstanceState.getBoolean("Btn3IsEnabled")
+
+            //Assigning values
+            saveDbButton.isEnabled = button1
+            searchMealIngreButton.isEnabled = button2
+            searchMealButton.isEnabled = button3
+            searchMealWebButton.isEnabled = button4
+        }
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        if (saveDbButton.isEnabled) {
+            outState.putBoolean("Btn1IsEnabled", true)
+        } else {
+            outState.putBoolean("Btn1IsEnabled", false)
+        }
+        if (searchMealIngreButton.isEnabled) {
+            outState.putBoolean("Btn2IsEnabled", true)
+        } else {
+            outState.putBoolean("Btn2IsEnabled", false)
+        }
+        if (searchMealButton.isEnabled) {
+            outState.putBoolean("Btn3IsEnabled", true)
+        } else {
+            outState.putBoolean("Btn3IsEnabled", false)
+        }
+        if (searchMealWebButton.isEnabled) {
+            outState.putBoolean("Btn3IsEnabled", true)
+        } else {
+            outState.putBoolean("Btn3IsEnabled", false)
+        }
+    }
+
     private fun saveMealsToDb() {
-        // Creating an instance of the database
         val db = Room.databaseBuilder(this, Database::class.java, "MovieDB").build()
         val mealDao = db.mealDao()
 
@@ -302,8 +363,6 @@ class MainActivity : AppCompatActivity(){
 
                     )
 
-
-
                 // Populating Database
                 mealDao.insertMeals(meal1)
                 mealDao.insertMeals(meal2)
@@ -317,11 +376,8 @@ class MainActivity : AppCompatActivity(){
         }
     }
     private fun dbTablePage() {
-        // Creating an instance of the database
         val intent = Intent(this, DisplayDB::class.java)
         startActivity(intent)
-
-
     }
 
     fun displaySearchIngrePage() {
@@ -329,7 +385,6 @@ class MainActivity : AppCompatActivity(){
         startActivity(intent)
     }
 
-    // Displaying Movie Search Page
     fun displaySearchMealPage() {
         val intent = Intent(this, SearchMeal::class.java)
         startActivity(intent)

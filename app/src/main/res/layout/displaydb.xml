@@ -3,21 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/meal1"
     android:layout_height="match_parent"
     tools:context=".DisplayDB">
 
     <TextView
         android:id="@+id/displayDataTv"
-        android:layout_width="125dp"
-        android:layout_height="33dp"
+        android:layout_width="187dp"
+        android:layout_height="39dp"
         android:text="DB Data"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.047" />
+        app:layout_constraintVertical_bias="0.041" />
 
     <ScrollView
         android:layout_width="368dp"
@@ -33,7 +35,7 @@
             android:id="@+id/dataTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Data goes here" />
+            android:hint="Data" />
     </ScrollView>
 
 

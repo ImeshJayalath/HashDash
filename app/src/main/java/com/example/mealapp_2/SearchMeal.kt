@@ -32,23 +32,21 @@ class SearchMeal : AppCompatActivity() {
     }
 
     private fun getMeal() {
-        // Access the database
+
         val db = Room.databaseBuilder(this, Database::class.java, "MealDB").build()
         val mealDao = db.mealDao()
 
-        // Getting the actor name
         val mealOrIng = searchMealBox!!.text.toString().lowercase().trim()
         if (mealOrIng  == "")
             return
 
         runBlocking {
             launch{
-                // Emptying the results box for every search
                 mealTitle = ""
 
                 val meals =  mealDao.getMealByIngredient(mealOrIng)
 
-                mealTitle = "|-------- Ingredient Related Meals- -------|\n\n"
+                mealTitle = "| -Ingredient Related Meals- |\n\n"
 
                 for ( x in meals){
                     mealTitle += "\nMeal: " +  x.meal.toString() +

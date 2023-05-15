@@ -28,103 +28,103 @@ class SearchIngredient : AppCompatActivity() {
     private var urlString: String = ""
     private var dbData: String = ""
 
-    private var mealId: Int = 0
-    private var mealIds = mutableListOf<Int>()
-    private var mealName: String = ""
-    private var mealNames = mutableListOf<String>()
-    private var mealDrinkAlternate: String = "null"
-    private var mealDrinkAlternates = mutableListOf<String>()
-    private var mealCategory: String = ""
-    private var mealCategorys = mutableListOf<String>()
-    private var mealArea: String = ""
-    private var mealAreas = mutableListOf<String>()
-    private var mealInstructions: String = ""
-    private var mealInstructions1 = mutableListOf<String>()
-    private var mealTag: String = ""
-    private var mealTags = mutableListOf<String>()
-    private var mealYoutube: String = ""
-    private var mealYoutubes = mutableListOf<String>()
-    private var mealIngredient1: String?= null
-    private var mealIngredient1s = mutableListOf<String>()
-    private var mealIngredient2: String?= null
-    private var mealIngredient2s = mutableListOf<String>()
-    private var mealIngredient3: String?= null
-    private var mealIngredient3s = mutableListOf<String>()
-    private var mealIngredient4: String?= null
-    private var mealIngredient4s = mutableListOf<String>()
-    private var mealIngredient5: String?= null
-    private var mealIngredient5s = mutableListOf<String>()
-    private var mealIngredient6: String?= null
-    private var mealIngredient6s = mutableListOf<String>()
-    private var mealIngredient7: String?= null
-    private var mealIngredient7s = mutableListOf<String>()
-    private var mealIngredient8: String?= null
-    private var mealIngredient8s = mutableListOf<String>()
-    private var mealIngredient9: String?= null
-    private var mealIngredient9s = mutableListOf<String>()
-    private var mealIngredient10: String?= null
-    private var mealIngredient10s = mutableListOf<String>()
-    private var mealIngredient11: String?= null
-    private var mealIngredient11s = mutableListOf<String>()
-    private var mealIngredient12: String?= null
-    private var mealIngredient12s = mutableListOf<String>()
-    private var mealIngredient13: String?= null
-    private var mealIngredient13s = mutableListOf<String>()
-    private var mealIngredient14: String?= null
-    private var mealIngredient14s = mutableListOf<String>()
-    private var mealIngredient15: String?= null
-    private var mealIngredient15s = mutableListOf<String>()
-    private var mealIngredient16: String?= null
-    private var mealIngredient16s = mutableListOf<String>()
-    private var mealIngredient17: String?= null
-    private var mealIngredient17s = mutableListOf<String>()
-    private var mealIngredient18: String?= null
-    private var mealIngredient18s = mutableListOf<String>()
-    private var mealIngredient19: String?= null
-    private var mealIngredient19s = mutableListOf<String>()
-    private var mealIngredient20: String?= null
-    private var mealIngredient20s = mutableListOf<String>()
+    private var Id: Int = 0
+    private var Ids = mutableListOf<Int>()
+    private var Name: String = ""
+    private var Names = mutableListOf<String>()
+    private var DrinkAlternate: String = "null"
+    private var DrinkAlternates = mutableListOf<String>()
+    private var Category: String = ""
+    private var Categories = mutableListOf<String>()
+    private var Area: String = ""
+    private var Areas = mutableListOf<String>()
+    private var Instruction: String = ""
+    private var Instructions = mutableListOf<String>()
+    private var Tag: String = ""
+    private var Tags = mutableListOf<String>()
+    private var Youtube: String = ""
+    private var Youtubes = mutableListOf<String>()
+    private var Ingredient1: String?= null
+    private var Ingredient1s = mutableListOf<String>()
+    private var Ingredient2: String?= null
+    private var Ingredient2s = mutableListOf<String>()
+    private var Ingredient3: String?= null
+    private var Ingredient3s = mutableListOf<String>()
+    private var Ingredient4: String?= null
+    private var Ingredient4s = mutableListOf<String>()
+    private var Ingredient5: String?= null
+    private var Ingredient5s = mutableListOf<String>()
+    private var Ingredient6: String?= null
+    private var Ingredient6s = mutableListOf<String>()
+    private var Ingredient7: String?= null
+    private var Ingredient7s = mutableListOf<String>()
+    private var Ingredient8: String?= null
+    private var Ingredient8s = mutableListOf<String>()
+    private var Ingredient9: String?= null
+    private var Ingredient9s = mutableListOf<String>()
+    private var Ingredient10: String?= null
+    private var Ingredient10s = mutableListOf<String>()
+    private var Ingredient11: String?= null
+    private var Ingredient11s = mutableListOf<String>()
+    private var Ingredient12: String?= null
+    private var Ingredient12s = mutableListOf<String>()
+    private var Ingredient13: String?= null
+    private var Ingredient13s = mutableListOf<String>()
+    private var Ingredient14: String?= null
+    private var Ingredient14s = mutableListOf<String>()
+    private var Ingredient15: String?= null
+    private var Ingredient15s = mutableListOf<String>()
+    private var Ingredient16: String?= null
+    private var Ingredient16s = mutableListOf<String>()
+    private var Ingredient17: String?= null
+    private var Ingredient17s = mutableListOf<String>()
+    private var Ingredient18: String?= null
+    private var Ingredient18s = mutableListOf<String>()
+    private var Ingredient19: String?= null
+    private var Ingredient19s = mutableListOf<String>()
+    private var Ingredient20: String?= null
+    private var Ingredient20s = mutableListOf<String>()
 
-    private var mealMeasure1: String?= null
-    private var mealMeasure1s = mutableListOf<String>()
-    private var mealMeasure2: String?= null
-    private var mealMeasure2s = mutableListOf<String>()
-    private var mealMeasure3: String?= null
-    private var mealMeasure3s = mutableListOf<String>()
-    private var mealMeasure4: String?= null
-    private var mealMeasure4s = mutableListOf<String>()
-    private var mealMeasure5: String?= null
-    private var mealMeasure5s = mutableListOf<String>()
-    private var mealMeasure6: String?= null
-    private var mealMeasure6s = mutableListOf<String>()
-    private var mealMeasure7: String?= null
-    private var mealMeasure7s = mutableListOf<String>()
-    private var mealMeasure8: String?= null
-    private var mealMeasure8s = mutableListOf<String>()
-    private var mealMeasure9: String?= null
-    private var mealMeasure9s = mutableListOf<String>()
-    private var mealMeasure10: String?= null
-    private var mealMeasure10s = mutableListOf<String>()
-    private var mealMeasure11: String?= null
-    private var mealMeasure11s = mutableListOf<String>()
-    private var mealMeasure12: String?= null
-    private var mealMeasure12s = mutableListOf<String>()
-    private var mealMeasure13: String?= null
-    private var mealMeasure13s = mutableListOf<String>()
-    private var mealMeasure14: String?= null
-    private var mealMeasure14s = mutableListOf<String>()
-    private var mealMeasure15: String?= null
-    private var mealMeasure15s = mutableListOf<String>()
-    private var mealMeasure16: String?= null
-    private var mealMeasure16s = mutableListOf<String>()
-    private var mealMeasure17: String?= null
-    private var mealMeasure17s = mutableListOf<String>()
-    private var mealMeasure18: String?= null
-    private var mealMeasure18s = mutableListOf<String>()
-    private var mealMeasure19: String?= null
-    private var mealMeasure19s = mutableListOf<String>()
-    private var mealMeasure20: String?= null
-    private var mealMeasure20s = mutableListOf<String>()
+    private var Measure1: String?= null
+    private var Measure1s = mutableListOf<String>()
+    private var Measure2: String?= null
+    private var Measure2s = mutableListOf<String>()
+    private var Measure3: String?= null
+    private var Measure3s = mutableListOf<String>()
+    private var Measure4: String?= null
+    private var Measure4s = mutableListOf<String>()
+    private var Measure5: String?= null
+    private var Measure5s = mutableListOf<String>()
+    private var Measure6: String?= null
+    private var Measure6s = mutableListOf<String>()
+    private var Measure7: String?= null
+    private var Measure7s = mutableListOf<String>()
+    private var Measure8: String?= null
+    private var Measure8s = mutableListOf<String>()
+    private var Measure9: String?= null
+    private var Measure9s = mutableListOf<String>()
+    private var Measure10: String?= null
+    private var Measure10s = mutableListOf<String>()
+    private var Measure11: String?= null
+    private var Measure11s = mutableListOf<String>()
+    private var Measure12: String?= null
+    private var Measure12s = mutableListOf<String>()
+    private var Measure13: String?= null
+    private var Measure13s = mutableListOf<String>()
+    private var Measure14: String?= null
+    private var Measure14s = mutableListOf<String>()
+    private var Measure15: String?= null
+    private var Measure15s = mutableListOf<String>()
+    private var Measure16: String?= null
+    private var Measure16s = mutableListOf<String>()
+    private var Measure17: String?= null
+    private var Measure17s = mutableListOf<String>()
+    private var Measure18: String?= null
+    private var Measure18s = mutableListOf<String>()
+    private var Measure19: String?= null
+    private var Measure19s = mutableListOf<String>()
+    private var Measure20: String?= null
+    private var Measure20s = mutableListOf<String>()
 
     private var finalResult: String = ""
 
@@ -186,311 +186,311 @@ class SearchIngredient : AppCompatActivity() {
         try{
             for(i in 0 until mealArrayLength){
                 val mealObject = mealArray.getJSONObject(i)
-                mealId=  mealObject.getString("idMeal").toInt()
-                mealIds.add(mealId)
-                mealName = mealObject.getString("strMeal")
-                mealNames.add(mealName)
-                mealDrinkAlternate = mealObject.getString("strDrinkAlternate")
-                mealDrinkAlternates.add(mealDrinkAlternate)
-                mealCategory = mealObject.getString("strCategory")
-                mealCategorys.add(mealCategory)
-                mealArea = mealObject.getString("strArea")
-                mealAreas.add(mealArea)
-                mealInstructions = mealObject.getString("strInstructions")
-                mealInstructions1.add(mealInstructions)
-                mealTag =mealObject.getString("strTags")
-                mealTags.add(mealTag)
-                mealYoutube = mealObject.getString("strYoutube")
-                mealYoutubes.add(mealYoutube)
+                Id=  mealObject.getString("idMeal").toInt()
+                Ids.add(Id)
+                Name = mealObject.getString("strMeal")
+                Names.add(Name)
+                DrinkAlternate = mealObject.getString("strDrinkAlternate")
+                DrinkAlternates.add(DrinkAlternate)
+                Category = mealObject.getString("strCategory")
+                Categories.add(Category)
+                Area = mealObject.getString("strArea")
+                Areas.add(Area)
+                Instruction = mealObject.getString("strInstructions")
+                Instructions.add(Instruction)
+                Tag =mealObject.getString("strTags")
+                Tags.add(Tag)
+                Youtube = mealObject.getString("strYoutube")
+                Youtubes.add(Youtube)
 
-                mealIngredient1= mealObject.getString("strIngredient1")
-                if (mealIngredient1.isNullOrEmpty()) {
-                    mealIngredient1 = "null"
+                Ingredient1= mealObject.getString("strIngredient1")
+                if (Ingredient1.isNullOrEmpty()) {
+                    Ingredient1 = "null"
                 }
-                mealIngredient1s.add(mealIngredient1 as String)
+                Ingredient1s.add(Ingredient1 as String)
 
-                mealIngredient2 = mealObject.getString("strIngredient2")
-                if (mealIngredient2.isNullOrEmpty()) {
-                    mealIngredient2 = "null"
+                Ingredient2 = mealObject.getString("strIngredient2")
+                if (Ingredient2.isNullOrEmpty()) {
+                    Ingredient2 = "null"
                 }
-                mealIngredient2s.add(mealIngredient2 as String)
+                Ingredient2s.add(Ingredient2 as String)
 
-                mealIngredient3= mealObject.getString("strIngredient3")
-                if (mealIngredient3.isNullOrEmpty()) {
-                    mealIngredient3 = "null"
+                Ingredient3= mealObject.getString("strIngredient3")
+                if (Ingredient3.isNullOrEmpty()) {
+                    Ingredient3 = "null"
                 }
-                mealIngredient3s.add(mealIngredient3 as String)
+                Ingredient3s.add(Ingredient3 as String)
 
-                mealIngredient4 = mealObject.getString("strIngredient4")
-                if (mealIngredient4.isNullOrEmpty()) {
-                    mealIngredient4 = "null"
+                Ingredient4 = mealObject.getString("strIngredient4")
+                if (Ingredient4.isNullOrEmpty()) {
+                    Ingredient4 = "null"
                 }
-                mealIngredient4s.add(mealIngredient4 as String)
+                Ingredient4s.add(Ingredient4 as String)
 
-                mealIngredient5 = mealObject.getString("strIngredient5")
-                if (mealIngredient5.isNullOrEmpty()) {
-                    mealIngredient5 = "null"
+                Ingredient5 = mealObject.getString("strIngredient5")
+                if (Ingredient5.isNullOrEmpty()) {
+                    Ingredient5 = "null"
                 }
-                mealIngredient5s.add(mealIngredient5 as String)
+                Ingredient5s.add(Ingredient5 as String)
 
-                mealIngredient6 = mealObject.getString("strIngredient6")
-                if (mealIngredient6.isNullOrEmpty()) {
-                    mealIngredient6 = "null"
+                Ingredient6 = mealObject.getString("strIngredient6")
+                if (Ingredient6.isNullOrEmpty()) {
+                    Ingredient6 = "null"
                 }
-                mealIngredient6s.add(mealIngredient6 as String)
+                Ingredient6s.add(Ingredient6 as String)
 
-                mealIngredient7 = mealObject.getString("strIngredient7")
-                if (mealIngredient7.isNullOrEmpty()) {
-                    mealIngredient7 = "null"
+                Ingredient7 = mealObject.getString("strIngredient7")
+                if (Ingredient7.isNullOrEmpty()) {
+                    Ingredient7 = "null"
                 }
-                mealIngredient7s.add(mealIngredient7 as String)
+                Ingredient7s.add(Ingredient7 as String)
 
-                mealIngredient8 = mealObject.getString("strIngredient8")
-                if (mealIngredient8.isNullOrEmpty()) {
-                    mealIngredient8 = "null"
+                Ingredient8 = mealObject.getString("strIngredient8")
+                if (Ingredient8.isNullOrEmpty()) {
+                    Ingredient8 = "null"
                 }
-                mealIngredient8s.add(mealIngredient8 as String)
+                Ingredient8s.add(Ingredient8 as String)
 
-                mealIngredient9 = mealObject.getString("strIngredient9")
-                if (mealIngredient9.isNullOrEmpty()) {
-                    mealIngredient9 = "null"
+                Ingredient9 = mealObject.getString("strIngredient9")
+                if (Ingredient9.isNullOrEmpty()) {
+                    Ingredient9 = "null"
                 }
-                mealIngredient9s.add(mealIngredient9 as String)
+                Ingredient9s.add(Ingredient9 as String)
 
-                mealIngredient10 = mealObject.getString("strIngredient10")
-                if (mealIngredient10.isNullOrEmpty()) {
-                    mealIngredient10 = "null"
+                Ingredient10 = mealObject.getString("strIngredient10")
+                if (Ingredient10.isNullOrEmpty()) {
+                    Ingredient10 = "null"
                 }
-                mealIngredient10s.add(mealIngredient10 as String)
+                Ingredient10s.add(Ingredient10 as String)
 
-                mealIngredient11 = mealObject.getString("strIngredient11")
-                if (mealIngredient11.isNullOrEmpty()) {
-                    mealIngredient11 = "null"
+                Ingredient11 = mealObject.getString("strIngredient11")
+                if (Ingredient11.isNullOrEmpty()) {
+                    Ingredient11 = "null"
                 }
-                mealIngredient11s.add(mealIngredient11 as String)
+                Ingredient11s.add(Ingredient11 as String)
 
-                mealIngredient12 = mealObject.getString("strIngredient12")
-                if (mealIngredient12.isNullOrEmpty()) {
-                    mealIngredient12 = "null"
+                Ingredient12 = mealObject.getString("strIngredient12")
+                if (Ingredient12.isNullOrEmpty()) {
+                    Ingredient12 = "null"
                 }
-                mealIngredient12s.add(mealIngredient12 as String)
+                Ingredient12s.add(Ingredient12 as String)
 
-                mealIngredient13 = mealObject.getString("strIngredient13")
-                if (mealIngredient13.isNullOrEmpty()) {
-                    mealIngredient13 = "null"
+                Ingredient13 = mealObject.getString("strIngredient13")
+                if (Ingredient13.isNullOrEmpty()) {
+                    Ingredient13 = "null"
                 }
-                mealIngredient13s.add(mealIngredient13 as String)
+                Ingredient13s.add(Ingredient13 as String)
 
-                mealIngredient14 = mealObject.getString("strIngredient14")
-                if (mealIngredient14.isNullOrEmpty()) {
-                    mealIngredient14 = "null"
+                Ingredient14 = mealObject.getString("strIngredient14")
+                if (Ingredient14.isNullOrEmpty()) {
+                    Ingredient14 = "null"
                 }
-                mealIngredient14s.add(mealIngredient14 as String)
+                Ingredient14s.add(Ingredient14 as String)
 
-                mealIngredient15 = mealObject.getString("strIngredient15")
-                if (mealIngredient15.isNullOrEmpty()) {
-                    mealIngredient15 = "null"
+                Ingredient15 = mealObject.getString("strIngredient15")
+                if (Ingredient15.isNullOrEmpty()) {
+                    Ingredient15 = "null"
                 }
-                mealIngredient15s.add(mealIngredient15 as String)
+                Ingredient15s.add(Ingredient15 as String)
 
-                mealIngredient16 = mealObject.getString("strIngredient16")
-                if (mealIngredient16.isNullOrEmpty()) {
-                    mealIngredient16 = "null"
+                Ingredient16 = mealObject.getString("strIngredient16")
+                if (Ingredient16.isNullOrEmpty()) {
+                    Ingredient16 = "null"
                 }
-                mealIngredient16s.add(mealIngredient16 as String)
+                Ingredient16s.add(Ingredient16 as String)
 
-                mealIngredient17 = mealObject.getString("strIngredient17")
-                if (mealIngredient17.isNullOrEmpty()) {
-                    mealIngredient17 = "null"
+                Ingredient17 = mealObject.getString("strIngredient17")
+                if (Ingredient17.isNullOrEmpty()) {
+                    Ingredient17 = "null"
                 }
-                mealIngredient17s.add(mealIngredient17 as String)
+                Ingredient17s.add(Ingredient17 as String)
 
-                mealIngredient18 = mealObject.getString("strIngredient18")
-                if (mealIngredient18.isNullOrEmpty()) {
-                    mealIngredient18 = "null"
+                Ingredient18 = mealObject.getString("strIngredient18")
+                if (Ingredient18.isNullOrEmpty()) {
+                    Ingredient18 = "null"
                 }
-                mealIngredient18s.add(mealIngredient18 as String)
+                Ingredient18s.add(Ingredient18 as String)
 
-                mealIngredient19 = mealObject.getString("strIngredient19")
-                if (mealIngredient19.isNullOrEmpty()) {
-                    mealIngredient19 = "null"
+                Ingredient19 = mealObject.getString("strIngredient19")
+                if (Ingredient19.isNullOrEmpty()) {
+                    Ingredient19 = "null"
                 }
-                mealIngredient19s.add(mealIngredient19 as String)
+                Ingredient19s.add(Ingredient19 as String)
 
-                mealIngredient20 = mealObject.getString("strIngredient20")
-                if (mealIngredient20.isNullOrEmpty()) {
-                    mealIngredient20 = "null"
+                Ingredient20 = mealObject.getString("strIngredient20")
+                if (Ingredient20.isNullOrEmpty()) {
+                    Ingredient20 = "null"
                 }
-                mealIngredient20s.add(mealIngredient20 as String)
+                Ingredient20s.add(Ingredient20 as String)
 
 
-                mealMeasure1 =mealObject.getString("strMeasure1")
-                if (mealMeasure1.isNullOrEmpty()) {
-                    mealMeasure1 = "null"
+                Measure1 =mealObject.getString("strMeasure1")
+                if (Measure1.isNullOrEmpty()) {
+                    Measure1 = "null"
                 }
-                mealMeasure1s.add(mealMeasure1 as String)
+                Measure1s.add(Measure1 as String)
 
-                mealMeasure2 =mealObject.getString("strMeasure2")
-                if (mealMeasure2.isNullOrEmpty()) {
-                    mealMeasure2 = "null"
+                Measure2 =mealObject.getString("strMeasure2")
+                if (Measure2.isNullOrEmpty()) {
+                    Measure2 = "null"
                 }
-                mealMeasure2s.add(mealMeasure2 as String)
+                Measure2s.add(Measure2 as String)
 
-                mealMeasure3 =mealObject.getString("strMeasure3")
-                if (mealMeasure3.isNullOrEmpty()) {
-                    mealMeasure3 = "null"
+                Measure3 =mealObject.getString("strMeasure3")
+                if (Measure3.isNullOrEmpty()) {
+                    Measure3 = "null"
                 }
-                mealMeasure3s.add(mealMeasure3 as String)
+                Measure3s.add(Measure3 as String)
 
-                mealMeasure4 =mealObject.getString("strMeasure4")
-                if (mealMeasure4.isNullOrEmpty()) {
-                    mealMeasure4 = "null"
+                Measure4 =mealObject.getString("strMeasure4")
+                if (Measure4.isNullOrEmpty()) {
+                    Measure4 = "null"
                 }
-                mealMeasure4s.add(mealMeasure4 as String)
+                Measure4s.add(Measure4 as String)
 
-                mealMeasure5 =mealObject.getString("strMeasure5")
-                if (mealMeasure5.isNullOrEmpty()) {
-                    mealMeasure5 = "null"
+                Measure5 =mealObject.getString("strMeasure5")
+                if (Measure5.isNullOrEmpty()) {
+                    Measure5 = "null"
                 }
-                mealMeasure5s.add(mealMeasure5 as String)
+                Measure5s.add(Measure5 as String)
 
-                mealMeasure6 =mealObject.getString("strMeasure6")
-                if (mealMeasure6.isNullOrEmpty()) {
-                    mealMeasure6 = "null"
+                Measure6 =mealObject.getString("strMeasure6")
+                if (Measure6.isNullOrEmpty()) {
+                    Measure6 = "null"
                 }
-                mealMeasure6s.add(mealMeasure6 as String)
+                Measure6s.add(Measure6 as String)
 
-                mealMeasure7 =mealObject.getString("strMeasure7")
-                if (mealMeasure7.isNullOrEmpty()) {
-                    mealMeasure7 = "null"
+                Measure7 =mealObject.getString("strMeasure7")
+                if (Measure7.isNullOrEmpty()) {
+                    Measure7 = "null"
                 }
-                mealMeasure7s.add(mealMeasure7 as String)
+                Measure7s.add(Measure7 as String)
 
-                mealMeasure8 =mealObject.getString("strMeasure8")
-                if (mealMeasure8.isNullOrEmpty()) {
-                    mealMeasure8 = "null"
+                Measure8 =mealObject.getString("strMeasure8")
+                if (Measure8.isNullOrEmpty()) {
+                    Measure8 = "null"
                 }
-                mealMeasure8s.add(mealMeasure8 as String)
+                Measure8s.add(Measure8 as String)
 
-                mealMeasure9 =mealObject.getString("strMeasure9")
-                if (mealMeasure9.isNullOrEmpty()) {
-                    mealMeasure9 = "null"
+                Measure9 =mealObject.getString("strMeasure9")
+                if (Measure9.isNullOrEmpty()) {
+                    Measure9 = "null"
                 }
-                mealMeasure9s.add(mealMeasure9 as String)
+                Measure9s.add(Measure9 as String)
 
-                mealMeasure10 =mealObject.getString("strMeasure10")
-                if (mealMeasure10.isNullOrEmpty()) {
-                    mealMeasure10 = "null"
+                Measure10 =mealObject.getString("strMeasure10")
+                if (Measure10.isNullOrEmpty()) {
+                    Measure10 = "null"
                 }
-                mealMeasure10s.add(mealMeasure10 as String)
+                Measure10s.add(Measure10 as String)
 
-                mealMeasure11 =mealObject.getString("strMeasure11")
-                if (mealMeasure11.isNullOrEmpty()) {
-                    mealMeasure11 = "null"
+                Measure11 =mealObject.getString("strMeasure11")
+                if (Measure11.isNullOrEmpty()) {
+                    Measure11 = "null"
                 }
-                mealMeasure11s.add(mealMeasure11 as String)
+                Measure11s.add(Measure11 as String)
 
-                mealMeasure12 =mealObject.getString("strMeasure12")
-                if (mealMeasure12.isNullOrEmpty()) {
-                    mealMeasure12 = "null"
+                Measure12 =mealObject.getString("strMeasure12")
+                if (Measure12.isNullOrEmpty()) {
+                    Measure12 = "null"
                 }
-                mealMeasure12s.add(mealMeasure12 as String)
+                Measure12s.add(Measure12 as String)
 
-                mealMeasure13 =mealObject.getString("strMeasure13")
-                if (mealMeasure13.isNullOrEmpty()) {
-                    mealMeasure13 = "null"
+                Measure13 =mealObject.getString("strMeasure13")
+                if (Measure13.isNullOrEmpty()) {
+                    Measure13 = "null"
                 }
-                mealMeasure13s.add(mealMeasure13 as String)
+                Measure13s.add(Measure13 as String)
 
-                mealMeasure14 =mealObject.getString("strMeasure14")
-                if (mealMeasure14.isNullOrEmpty()) {
-                    mealMeasure14 = "null"
+                Measure14 =mealObject.getString("strMeasure14")
+                if (Measure14.isNullOrEmpty()) {
+                    Measure14 = "null"
                 }
-                mealMeasure14s.add(mealMeasure14 as String)
+                Measure14s.add(Measure14 as String)
 
-                mealMeasure15 =mealObject.getString("strMeasure15")
-                if (mealMeasure15.isNullOrEmpty()) {
-                    mealMeasure15 = "null"
+                Measure15 =mealObject.getString("strMeasure15")
+                if (Measure15.isNullOrEmpty()) {
+                    Measure15 = "null"
                 }
-                mealMeasure15s.add(mealMeasure15 as String)
+                Measure15s.add(Measure15 as String)
 
-                mealMeasure16 =mealObject.getString("strMeasure16")
-                if (mealMeasure16.isNullOrEmpty()) {
-                    mealMeasure16 = "null"
+                Measure16 =mealObject.getString("strMeasure16")
+                if (Measure16.isNullOrEmpty()) {
+                    Measure16 = "null"
                 }
-                mealMeasure16s.add(mealMeasure16 as String)
+                Measure16s.add(Measure16 as String)
 
-                mealMeasure17 =mealObject.getString("strMeasure17")
-                if (mealMeasure17.isNullOrEmpty()) {
-                    mealMeasure17 = "null"
+                Measure17 =mealObject.getString("strMeasure17")
+                if (Measure17.isNullOrEmpty()) {
+                    Measure17 = "null"
                 }
-                mealMeasure17s.add(mealMeasure17 as String)
+                Measure17s.add(Measure17 as String)
 
-                mealMeasure18 =mealObject.getString("strMeasure18")
-                if (mealMeasure18.isNullOrEmpty()) {
-                    mealMeasure18 = "null"
+                Measure18 =mealObject.getString("strMeasure18")
+                if (Measure18.isNullOrEmpty()) {
+                    Measure18 = "null"
                 }
-                mealMeasure18s.add(mealMeasure18 as String)
+                Measure18s.add(Measure18 as String)
 
-                mealMeasure19 =mealObject.getString("strMeasure19")
-                if (mealMeasure19.isNullOrEmpty()) {
-                    mealMeasure19 = "null"
+                Measure19 =mealObject.getString("strMeasure19")
+                if (Measure19.isNullOrEmpty()) {
+                    Measure19 = "null"
                 }
-                mealMeasure19s.add(mealMeasure19 as String)
+                Measure19s.add(Measure19 as String)
 
-                mealMeasure20 =mealObject.getString("strMeasure20")
-                if (mealMeasure20.isNullOrEmpty()) {
-                    mealMeasure20 = "null"
+                Measure20 =mealObject.getString("strMeasure20")
+                if (Measure20.isNullOrEmpty()) {
+                    Measure20 = "null"
                 }
-                mealMeasure20s.add(mealMeasure20 as String)
+                Measure20s.add(Measure20 as String)
 
-                finalResult += "\nMeal: " +  mealName +
-                        "\nDrinkAlternate: " +  mealDrinkAlternates +
-                        "\nCategory: " + mealCategory +
-                        "\nArea : " + mealArea +
-                        "\nInstructions: " + mealInstructions +
-                        "\nTag: " + mealTag +
-                        "\nYoutube: " + mealYoutube +
-                        "\nIngredient1: " + mealIngredient1 +
-                        "\nIngredient2: " + mealIngredient2 +
-                        "\nIngredient3: " + mealIngredient3 +
-                        "\nIngredient4: " + mealIngredient4 +
-                        "\nIngredient5: " + mealIngredient5 +
-                        "\nIngredient6: " + mealIngredient6 +
-                        "\nIngredient7: " + mealIngredient7 +
-                        "\nIngredient8: " + mealIngredient8 +
-                        "\nIngredient9: " + mealIngredient9 +
-                        "\nIngredient10: " + mealIngredient10 +
-                        "\nIngredient11: " + mealIngredient11 +
-                        "\nIngredient12: " + mealIngredient12 +
-                        "\nIngredient13: " + mealIngredient13 +
-                        "\nIngredient14: " + mealIngredient14 +
-                        "\nIngredient15: " + mealIngredient15 +
-                        "\nIngredient16: " + mealIngredient16 +
-                        "\nIngredient17: " + mealIngredient17 +
-                        "\nIngredient18: " + mealIngredient18 +
-                        "\nIngredient19: " + mealIngredient19 +
-                        "\nIngredient20: " + mealIngredient20 +
-                        "\nMeasure1: " + mealMeasure1 +
-                        "\nMeasure2: " + mealMeasure2 +
-                        "\nMeasure3: " + mealMeasure3 +
-                        "\nMeasure4: " + mealMeasure4 +
-                        "\nMeasure5: " + mealMeasure5 +
-                        "\nMeasure6 : " + mealMeasure6 +
-                        "\nMeasure7: " + mealMeasure7 +
-                        "\nMeasure8: " + mealMeasure8 +
-                        "\nMeasure9: " + mealMeasure9 +
-                        "\nMeasure10: " + mealMeasure10 +
-                        "\nMeasure11: " + mealMeasure11 +
-                        "\nMeasure12: " + mealMeasure12 +
-                        "\nMeasure13: " + mealMeasure13 +
-                        "\nMeasure14: " + mealMeasure14 +
-                        "\nMeasure15: " + mealMeasure15 +
-                        "\nMeasure16: " + mealMeasure16 +
-                        "\nMeasure17: " + mealMeasure17 +
-                        "\nMeasure18: " + mealMeasure18 +
-                        "\nMeasure19: " + mealMeasure19 +
-                        "\nMeasure20: " + mealMeasure20+
+                finalResult += "\nMeal: " +  Name +
+                        "\nDrinkAlternate: " +  DrinkAlternates +
+                        "\nCategory: " + Category +
+                        "\nArea : " + Area +
+                        "\nInstructions: " + Instruction +
+                        "\nTag: " + Tag +
+                        "\nYoutube: " + Youtube +
+                        "\nIngredient1: " + Ingredient1 +
+                        "\nIngredient2: " + Ingredient2 +
+                        "\nIngredient3: " + Ingredient3 +
+                        "\nIngredient4: " + Ingredient4 +
+                        "\nIngredient5: " + Ingredient5 +
+                        "\nIngredient6: " + Ingredient6 +
+                        "\nIngredient7: " + Ingredient7 +
+                        "\nIngredient8: " + Ingredient8 +
+                        "\nIngredient9: " + Ingredient9 +
+                        "\nIngredient10: " + Ingredient10 +
+                        "\nIngredient11: " + Ingredient11 +
+                        "\nIngredient12: " + Ingredient12 +
+                        "\nIngredient13: " + Ingredient13 +
+                        "\nIngredient14: " + Ingredient14 +
+                        "\nIngredient15: " + Ingredient15 +
+                        "\nIngredient16: " + Ingredient16 +
+                        "\nIngredient17: " + Ingredient17 +
+                        "\nIngredient18: " + Ingredient18 +
+                        "\nIngredient19: " + Ingredient19 +
+                        "\nIngredient20: " + Ingredient20 +
+                        "\nMeasure1: " + Measure1 +
+                        "\nMeasure2: " + Measure2 +
+                        "\nMeasure3: " + Measure3 +
+                        "\nMeasure4: " + Measure4 +
+                        "\nMeasure5: " + Measure5 +
+                        "\nMeasure6 : " + Measure6 +
+                        "\nMeasure7: " + Measure7 +
+                        "\nMeasure8: " + Measure8 +
+                        "\nMeasure9: " + Measure9 +
+                        "\nMeasure10: " + Measure10 +
+                        "\nMeasure11: " + Measure11 +
+                        "\nMeasure12: " + Measure12 +
+                        "\nMeasure13: " + Measure13 +
+                        "\nMeasure14: " + Measure14 +
+                        "\nMeasure15: " + Measure15 +
+                        "\nMeasure16: " + Measure16 +
+                        "\nMeasure17: " + Measure17 +
+                        "\nMeasure18: " + Measure18 +
+                        "\nMeasure19: " + Measure19 +
+                        "\nMeasure20: " + Measure20+
                         "\n\n"
                 print("this is running ")
             }
@@ -505,7 +505,6 @@ class SearchIngredient : AppCompatActivity() {
         }
         return finalResult;
     }
-
     private fun saveMeal() {
 
         val db = Room.databaseBuilder(this, Database::class.java, "MealDB").build()
@@ -513,21 +512,20 @@ class SearchIngredient : AppCompatActivity() {
 
         runBlocking {
             launch{
-                // Saving the searched movie results in the DataBase
                 val meals: List<Meal> = mealDao.getAll()
                 var meaDataArray: ArrayList<Meal> = ArrayList()
                 var index = meals.size
-                for ( i in 0 until mealNames.size){
+                for ( i in 0 until Names.size){
                     index += i
-                    meaDataArray.add(Meal(index, mealNames[i], mealDrinkAlternates[i], mealCategorys[i], mealAreas[i],
-                        mealInstructions1[i], mealTags[i], mealYoutubes[i], mealIngredient1s[i], mealIngredient2s[i],
-                        mealIngredient3s[i], mealIngredient4s[i],mealIngredient5s[i],mealIngredient6s[i],mealIngredient7s[i],
-                        mealIngredient8s[i],mealIngredient9s[i],mealIngredient10s[i],mealIngredient11s[i],mealIngredient12s[i],
-                        mealIngredient13s[i],mealIngredient14s[i],mealIngredient15s[i],mealIngredient16s[i],mealIngredient17s[i],
-                        mealIngredient18s[i],mealIngredient19s[i],mealIngredient20s[i],mealMeasure1s[i],mealMeasure2s[i],
-                        mealMeasure3s[i],mealMeasure4s[i],mealMeasure5s[i],mealMeasure6s[i],mealMeasure7s[i],mealMeasure8s[i],
-                        mealMeasure9s[i],mealMeasure10s[i],mealMeasure11s[i],mealMeasure12s[i],mealMeasure13s[i],mealMeasure14s[i],
-                        mealMeasure15s[i],mealMeasure16s[i],mealMeasure17s[i],mealMeasure18s[i],mealMeasure19s[i],mealMeasure20s[i]))
+                    meaDataArray.add(Meal(index, Names[i], DrinkAlternates[i], Categories[i], Areas[i],
+                        Instructions[i], Tags[i], Youtubes[i], Ingredient1s[i], Ingredient2s[i],
+                        Ingredient3s[i], Ingredient4s[i],Ingredient5s[i],Ingredient6s[i],Ingredient7s[i],
+                        Ingredient8s[i],Ingredient9s[i],Ingredient10s[i],Ingredient11s[i],Ingredient12s[i],
+                        Ingredient13s[i],Ingredient14s[i],Ingredient15s[i],Ingredient16s[i],Ingredient17s[i],
+                        Ingredient18s[i],Ingredient19s[i],Ingredient20s[i],Measure1s[i],Measure2s[i],
+                        Measure3s[i],Measure4s[i],Measure5s[i],Measure6s[i],Measure7s[i],Measure8s[i],
+                        Measure9s[i],Measure10s[i],Measure11s[i],Measure12s[i],Measure13s[i],Measure14s[i],
+                        Measure15s[i],Measure16s[i],Measure17s[i],Measure18s[i],Measure19s[i],Measure20s[i]))
 
                 }
                 println(meaDataArray.size-1)

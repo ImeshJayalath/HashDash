@@ -68,26 +68,17 @@ class SearchWeb : AppCompatActivity() {
         }
     }
 
-    /**
-     * Reading the Json data from the string buffer object and
-     * retrieving the necessary information
-     * */
     private fun parseJSON(stb: StringBuilder): String {
-        // Displaying proper message for empty results
 
-        // Extracting the actual data from the JSON data
         val json = JSONObject(stb.toString())
         val mealArray = json.getJSONArray("meals")
         val mealArrayLength = mealArray.length()
-        //val mealObject = mealArray.getJSONObject(0)
+
         println(json)
         try{
             for(i in 0 until mealArrayLength){
                 val mealObject = mealArray.getJSONObject(i)
-
                 mealName = mealObject.getString("strMeal")
-
-
 
                 finalResult += "\nMeal: " +  mealName +
                         "\n\n"
